@@ -64,8 +64,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    const saveContacts = JSON.parse(localStorage.getItem('contactsList'));
-    console.log(saveContacts)
+    const saveContacts = JSON.parse(localStorage.getItem('contactsList'))? JSON.parse(localStorage.getItem('contactsList')) : "" ;
     this.setState({contacts: saveContacts})
   }
 
