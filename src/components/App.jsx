@@ -59,6 +59,16 @@ export default class App extends Component {
     })
   }
 
+  componentDidUpdate() {
+    localStorage.setItem('contactsList', JSON.stringify(this.state.contacts))
+  }
+
+  componentDidMount() {
+    const saveContacts = JSON.parse(localStorage.getItem('contactsList'));
+    console.log(saveContacts)
+    this.setState({contacts: saveContacts})
+  }
+
   render() {
     const data = this.getFilteredContacts()
     return(
